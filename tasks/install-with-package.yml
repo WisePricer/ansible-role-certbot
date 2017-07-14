@@ -1,7 +1,20 @@
 ---
-- name: Install Certbot.
-  package: "name={{ certbot_package }} state=present"
+- name: Ensure software-properties is installed
+  apt:
+    name: software-properties-common
+    state: present
+    update_cache: yes
+    cache_valid_:time: 3600
 
-- name: Set Certbot script variable.
-  set_fact:
-    certbot_script: "{{ certbot_package }}"
+- name: Add repository
+  apt_repository:
+    repo: 'ppa:certbot/certbot'
+    state: present
+    update_cache: yes
+
+- name: Install Certbot.
+  apt:
+    name: '{{ certbot_package }}'
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
