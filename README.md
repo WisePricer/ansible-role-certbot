@@ -1,6 +1,6 @@
 # Ansible Role: Certbot (for Let's Encrypt)
 
-[![Build Status](https://travis-ci.org/tkramheller/ansible-role-certbot.svg?branch=master)](https://travis-ci.org/tkramheller/ansible-role-certbot)
+[![Build Status](https://travis-ci.org/picturemaxx/ansible-role-certbot.svg?branch=master)](https://travis-ci.org/tkramheller/ansible-role-certbot)
 
 Installs and configures Certbot (for Let's Encrypt).
 
