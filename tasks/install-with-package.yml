@@ -4,7 +4,7 @@
     name: software-properties-common
     state: present
     update_cache: yes
-    cache_valid_:time: 3600
+    cache_valid_time: 3600
 
 - name: Add repository
   apt_repository:
