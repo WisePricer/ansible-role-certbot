@@ -1,6 +1,6 @@
 # Ansible Role: Certbot (for Let's Encrypt)
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-certbot.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-certbot)
+[![Build Status](https://travis-ci.org/picturemaxx/ansible-role-certbot.svg?branch=master)](https://travis-ci.org/picturemaxx/ansible-role-certbot)
 
 Installs and configures Certbot (for Let's Encrypt).
 
@@ -16,6 +16,7 @@ The variable `certbot_install_from_source` controls whether to install Certbot f
     certbot_auto_renew_user: "{{ ansible_user }}"
     certbot_auto_renew_hour: 3
     certbot_auto_renew_minute: 30
+    certbot_script: certbot
 
 By default, this role configures a cron job to run under the provided user account at the given hour and minute, every day. The defaults run `certbot renew` (or `certbot-auto renew`) via cron every day at 03:30:00 by the user you use in your Ansible playbook. It's preferred that you set a custom user/hour/minute so the renewal is during a low-traffic period and done by a non-root user account.
 
@@ -48,7 +49,7 @@ None.
         certbot_auto_renew_hour: 5
     
       roles:
-        - geerlingguy.certbot
+        - ansible-role-certbot
 
 After installation, you can create certificates using the `certbot` (or `certbot-auto`) script, which by default is installed inside the configured `certbot_dir` (when using Git). Here are some example commands to configure certificates with Certbot:
 
@@ -72,4 +73,4 @@ MIT / BSD
 
 ## Author Information
 
-This role was created in 2016 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+Bases on the work of [Jeff Geerling](https://www.jeffgeerling.com/) and extended by [Tobias Kramheller](https://github.com/tkramheller).
