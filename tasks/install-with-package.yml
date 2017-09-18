@@ -3,21 +3,21 @@
   apt:
     name: software-properties-common
     state: present
-    become: yes
     update_cache: yes
     cache_valid_time: 3600
+  become: yes
 
 - name: Add repository
   apt_repository:
     repo: 'ppa:certbot/certbot'
     state: present
-    become: yes
     update_cache: yes
+  become: yes
 
 - name: Install Certbot.
   apt:
     name: '{{ certbot_package }}'
     state: present
-    become: yes
     update_cache: yes
     cache_valid_time: 3600
+  become: yes
